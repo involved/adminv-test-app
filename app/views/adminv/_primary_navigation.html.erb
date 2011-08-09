@@ -1,0 +1,21 @@
+<%- if defined?(Menumatic) -%>
+	<%= render :navigation => "admin", :level => :primary, :id => "site-menu" %>
+	<%= render :navigation => "user", :id => "settings-menu" %>
+<%- else -%>
+  <ul class="navigation admin active level_1 depth_1" id="site-menu">
+    <li class="active"><a href="/manage/promos">Home</a></li>
+    <li class="inactive"><a href="/manage/users">Our Story</a></li>
+    <li class="inactive"><a href="/manage/releases">Our Music</a></li>
+    <li class="inactive"><a href="/manage/events">Shows</a></li>
+    <li class="inactive"><a href="/manage/news_posts">News</a></li>
+    <li class="inactive"><a href="/manage/flickr_photosets">Galleries</a></li>
+    <li class="inactive"><a href="/manage/education">Our Workshops</a></li>
+    <li class="inactive"><a href="/manage/bookings">Bookings</a></li>
+    <li class="inactive"><a href="/manage/downloads">Media Downloads</a></li>
+  </ul>
+  <ul class="navigation user inactive level_1 depth_1" id="settings-menu">
+    <li class="account"><%= link_to "Account", "javascript:void(0)" %></li>
+    <li class="settings"><%= link_to "settings", "javascript:void(0)" %></li>
+    <li class="logout"><%= link_to "Sign out", "javascript:void(0)" %></li>
+  </ul><!-- #settings-menu -->
+<%- end -%>
