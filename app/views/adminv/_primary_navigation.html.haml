@@ -1,0 +1,10 @@
+- if defined?(Menumatic)
+  = render :navigation => "admin", :level => :primary, :id => "site-menu"
+  = render :navigation => "user", :id => "settings-menu"
+- else
+  %ul#site-menu
+    %li= link_to "Dashboard", "javascript:void(0)"
+  %ul#settings-menu
+    %li.account= link_to "Account", "javascript:void(0)"
+    %li.settings= link_to "settings", "javascript:void(0)"
+    %li.logout= link_to "Sign out", "javascript:void(0)"
