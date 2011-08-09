@@ -1,1 +1,2 @@
-= link_to("Adminv", root_path, { :class => "logo" })
+%h1
+  = link_to_if request.fullpath != root_path, "Adminv", root_url
