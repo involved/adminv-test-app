@@ -1,12 +1,11 @@
--# title "Our Music", "Manage"
+- title "Users", "Manage"
 
 - content_for :sidebar_left do
-  test
-  =# add_button_link_to "New Release", new_manage_release_path
+  = add_button_link_to "New User", "#"
 
 = adminv_container :width => :with_sidebar do |container|
   = container.table do |table|
-    = table.header "Table Header"
+    = table.header "Users"
     .table
       .header-group
         .row
