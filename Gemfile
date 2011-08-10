@@ -9,6 +9,12 @@ gem 'haml'
 
 gem "faker", "~> 0.9.5"
 
+# Simple Forms - form DSL
+gem "simple_form", "~> 1.4.2"
+
+# Markdown interpreter
+gem "rdiscount", '1.6.5'
+
 group :assets do
   gem 'sass-rails', "~> 3.1.0.rc"
   gem 'coffee-rails', "~> 3.1.0.rc"

@@ -8,6 +8,11 @@
   = adminv_container :width => :with_sidebar do |container|
     = container.content "Forms" do |content|
       = content.header ""
+      = simple_form_for :user do |f|
+        %ul
+          = f.input :email
+          = f.input :first_name
+          = f.input :last_name
 
     = container.table "Accordions" do |table|
       = table.header ""
@@ -65,5 +70,31 @@
         .block-actions
           =# add_row(f, :tracks, :form_builder_local => :form, :label => "Add new track", :object => @release.tracks.build, :target => "#track-listing.table .row-group")
 
+    = container.table "Sortable Accordions" do |table|
+      = table.header ""
+      .table.accordion.sortable
+        .header-group
+          .row
+            .col Order
+            .col First Name
+            .col Last Name
+            .col Email
+            .col Username
+            .col &nbsp;
+        .row-group
+          - (1...10).to_a.each do |index|
+            .row
+              .col.sort-handle
+              .col= Faker::Name.first_name
+              .col= Faker::Name.last_name
+              .col= Faker::Internet.email
+              .col= Faker::Internet.user_name
+              .col.actions
+                = button_group do
+                  = edit_button_link_to "Edit preview", "#", :class => "accordion-toggle"
+                  =# remove_row("#")
+              .details
+                %ul.table
+                  %li This is an accordion aaaight!!
 
 = render :partial => "sample/examples/table_basic"
