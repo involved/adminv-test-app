@@ -3,6 +3,17 @@
 - content_for :sidebar_left do
   = add_button_link_to "New User", "#"
 
+
+= adminv_container :width => :with_sidebar do |container|
+  = container.content "Forms" do |content|
+    = content.header ""
+
+  = container.content "Accordions" do |content|
+    = content.header ""
+  
+  = container.content "Sortable" do |table|
+    = table.header ""
+
 = adminv_container :width => :with_sidebar do |container|
   = container.table do |table|
     = table.header "Users"
@@ -29,3 +40,4 @@
                 = pill_button_link_to "Show", "#", :title => "show", :target => "_blank"
                 = pill_button_link_to "Edit", "#", :title => "edit"
                 = negative_pill_trash_button_link_to "Delete", "#", :title => "destroy", :method => :delete, :confirm => "Are you sure?"
+
