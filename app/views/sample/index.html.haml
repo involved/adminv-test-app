@@ -3,22 +3,25 @@
 - content_for :sidebar_left do
   = add_button_link_to "New User", "#"
 
-
 .block-form
   = adminv_container :width => :with_sidebar do |container|
     = container.content "Forms" do |content|
       = content.header ""
-      = simple_form_for :user do |f|
+      = simple_form_for :user, :html => {:novalidate => true} do |f|
         %p 
           Adminv has been developed using '[simple_form](https://github.com/plataformatec/simple_form)' to handle it's forms. Adminv will in future be form builder agnostic but for now its best to use [simple_form](https://github.com/plataformatec/simple_form) and be sure to set `config.wrapper_tag = :li` in `config/initalizers/simple_form.rb`.
         %ul
-          = f.input :xsmall, :input_html => {:class => "xsmall"}
-          = f.input :small, :input_html => {:class => "small"}
-          = f.input :medium, :input_html => {:class => "medium"}
+          = f.input :xsmall, :input_html => {:class => "xsmall"}, :label => "Extra small"
+          = f.input :small, :input_html => {:class => "small"}, :disabled => true
+          = f.input :medium, :input_html => {:class => "medium error"}
           = f.input :large, :input_html => {:class => "large"}
           = f.input :xlarge, :input_html => {:class => "xlarge"}
           = f.input :date, :label => "Date", :order => [:day, :month, :year], :as => :date, :start_year => 1997, :end_year => Date.today.year + 2
           = f.input :description, :as => :text
+          = f.collection_check_boxes :options, [[true, 'Yes'] ,[false, 'No']], :first, :last, :label => "what"
+          = f.input :age, :collection => 18..60, :prompt => "Choose an age"
+          = f.collection_radio :options, [[true, 'Yes'] ,[false, 'No']], :first, :last
+
           = f.input :Upload, :hint => "(This is a hint)"
 
     = container.table "Accordions" do |table|

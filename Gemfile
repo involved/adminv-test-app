@@ -7,6 +7,7 @@ gem 'bson_ext'
 gem 'adminv', :path => '../adminv'
 gem 'haml'
 
+gem 'bourbon'
 gem "faker", "~> 0.9.5"
 
 # Simple Forms - form DSL
