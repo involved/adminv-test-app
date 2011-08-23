@@ -4,7 +4,7 @@
   = add_button_link_to "New User", "#"
 
 .block-form
-  = adminv_container :width => :with_sidebar do |container|
+  = adminv_container do |container|
     = container.content "Forms" do |content|
       = content.header ""
       = simple_form_for :user, :html => {:novalidate => true} do |f|
