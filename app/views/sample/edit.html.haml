@@ -1,31 +1,8 @@
-- title "Tables", "Options"
+- title("Edit fake form template") 
 
-- content_for :sidebar_left do
-  = add_button_link_to "New User", "#"
+= back_block
 
-  = adminv_container :width => :with_sidebar do |container|
-    = container.table do |table|
-      = table.header "Users"
-      .table
-        .header-group
-          .row
-            .col ID
-            .col First Name
-            .col Last Name
-            .col Email
-            .col Username
-            .col &nbsp;
-        =# empty_row @releases, "releases"
-        .row-group
-          - (1...25).to_a.each do |index|
-            .row
-              .col= index
-              .col= Faker::Name.first_name
-              .col= Faker::Name.last_name
-              .col= Faker::Internet.email
-              .col= Faker::Internet.user_name
-              .col.actions
-                = button_group do
-                  = pill_button_link_to "Show", "#", :title => "show", :target => "_blank"
-                  = pill_button_link_to "Edit", "#", :title => "edit"
-                  = negative_pill_trash_button_link_to "Delete", "#", :title => "destroy", :method => :delete, :confirm => "Are you sure?"
+.block-title.grid_9
+  %h1= "Edit: title goes here"
+
+= render :partial => 'form'

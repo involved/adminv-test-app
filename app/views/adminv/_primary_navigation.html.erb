@@ -3,10 +3,9 @@
 	<%= render :navigation => "user", :id => "settings-menu" %>
 <%- else -%>
   <ul class="navigation admin active level_1 depth_1" id="site-menu">
-    <li class="active"><a href="/">Dashboard</a></li>
-    <li class="inactive"><%= link_to "Tables", sample_edit_path%></li>
-    <li class="inactive"><a href="/manage/releases">Form</a></li>
-    <li class="inactive"><a href="/manage/users">Tabs</a></li>
+    <li class="active"><%= link_to "Block", root_path%></li>
+    <li class="inactive"><%= link_to "Forms", sample_edit_path %></li>
+    <li class="inactive"><%= link_to "Log-in", "sample_login_path" %></li>
   </ul>
   <ul class="navigation user inactive level_1 depth_1" id="settings-menu">
     <li class="account"><%= link_to "Account", "javascript:void(0)" %></li>
