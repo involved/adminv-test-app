@@ -3,7 +3,7 @@
 - content_for :sidebar_left do
   = add_button_link_to "New User", "#"
 
-.block-form
+-#.block-form
   = adminv_container do |container|
     = container.table "Accordions" do |table|
       = table.header ""
@@ -95,8 +95,8 @@
               .details
                 %ul.table
                   %li This is an accordion aaaight!!
-
-= render :partial => "sample/examples/table_basic"
+  -
+=# render :partial => "sample/examples/table_basic"
 
 
 
