@@ -98,3 +98,40 @@
 
 = render :partial => "sample/examples/table_basic"
 
+
+
+= adminv_container :width => :with_sidebar do |container|
+  = container.table do |table|
+    = table.header "Users"
+    .table.accordion
+      .header-group
+        .row
+          .col ID
+          .col First Name
+          .col Last Name
+          .col Email
+          .col Username
+          .col &nbsp;
+      .row-group
+        - (1...10).to_a.each do |index|
+          .row
+            .col= index
+            .col= Faker::Name.first_name
+            .col= Faker::Name.last_name
+            .col= Faker::Internet.email
+            .col= Faker::Internet.user_name
+            .col.actions
+              = button_group do
+                = edit_button_link_to "Edit preview", "#", :class => "accordion-toggle"
+                =# remove_row("#")
+            .details
+              %ul.table
+                %li This is an accordion aaaight!!
+      .footer-group
+        .row
+          .col Col 1
+          .col Col 2
+          .col Col 3
+          .col Col 4
+          .col Col 5
+          .col Col 6
