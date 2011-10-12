@@ -98,9 +98,11 @@
   -
 =# render :partial => "sample/examples/table_basic"
 
+= render :partial => "sample/examples/block_controls_tableless"
 
 
-= adminv_container :width => :with_sidebar do |container|
+
+-#= adminv_container :width => :with_sidebar do |container|
   = container.table do |table|
     = table.header "Users"
     .table.accordion

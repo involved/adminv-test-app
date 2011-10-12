@@ -1,0 +1,49 @@
+= simple_form_for :user, :html => {:novalidate => true} do |f|
+  = adminv_container :width => :with_sidebar do |container|
+    = container.content "Dogs" do |content|
+      = content.header ""
+      .block-inner
+        %strong First Name: 
+        = Faker::Name.first_name
+        <br />
+      
+        %strong Last Name:
+        = Faker::Name.last_name
+        <br />
+      
+        %strong Email:
+        = Faker::Internet.email
+        <br />
+      
+        %strong Username:
+        = Faker::Internet.user_name
+
+      .block-controls
+        .block-actions
+          = button_group do
+            = button_link_to "Edit Dog", "#"
+            = negative_button_link_to "Delete Dog", "#", :method => "delete", :confirm => "Are you sure?"
+            
+    = container.content "Cats" do |content|
+      = content.header ""
+      .block-inner
+        %strong First Name: 
+        = Faker::Name.first_name
+        <br />
+
+        %strong Last Name:
+        = Faker::Name.last_name
+        <br />
+
+        %strong Email:
+        = Faker::Internet.email
+        <br />
+
+        %strong Username:
+        = Faker::Internet.user_name
+
+      .block-controls
+        .block-actions
+          = button_group do
+            = button_link_to "Edit Cat", "#"
+            = negative_button_link_to "Delete Cat", "#", :method => "delete", :confirm => "Are you sure?"
